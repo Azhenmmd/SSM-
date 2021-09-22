@@ -11,7 +11,7 @@
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--获取数据源-->
-    <context:property-placeholder location="classpath:database.properties"/>
+    <context:property-placeholder location="classpath*:database.properties"/>
 
     <!--数据库连接池
     dbcp:半自动化操作，不能自动连接
@@ -19,10 +19,10 @@
     druid ,hikari
     -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="${gzz.driver}"/>
+        <property name="url" value="${gzz.url}"/>
+        <property name="username" value="${gzz.username}"/>
+        <property name="password" value="${gzz.password}"/>
     </bean>
 
     <!--SqlSessionFactory-->

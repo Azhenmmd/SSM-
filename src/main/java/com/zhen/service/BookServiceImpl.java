@@ -2,12 +2,14 @@ package com.zhen.service;
 
 import com.zhen.mapper.BookMapper;
 import com.zhen.pojo.Books;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService{
+    @Autowired
     private BookMapper bookMapper;
 
     public void setBookMapper(BookMapper bookMapper) {
@@ -16,7 +18,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public List<Books> queryBooks() {
-        return null;
+        return bookMapper.queryBooks();
     }
 
     @Override
