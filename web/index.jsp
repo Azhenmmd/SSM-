@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="${pageContext.request.contextPath}/book/allbook">查询所有书籍</a>
   </body>
 </html>
