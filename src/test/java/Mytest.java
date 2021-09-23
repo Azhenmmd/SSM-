@@ -12,7 +12,9 @@ public class Mytest {
     public void Test1(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         BookMapper bean = applicationContext.getBean(BookMapper.class);
-        Books books = bean.queryBooksById(1);
-        System.out.println(books);
+        List<Books> books = bean.queryBooksEvery("%dsav%");
+        for (Books book : books) {
+            System.out.println(book);
+        }
     }
 }

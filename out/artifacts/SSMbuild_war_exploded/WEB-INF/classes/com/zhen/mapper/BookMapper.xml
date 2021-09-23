@@ -25,4 +25,7 @@
         insert into books (bookName,bookCounts,detail) value (#{bookName},#{bookCounts},#{detail})
     </insert>
 
+    <select id="queryBooksEvery" resultType="Books" parameterType="String">
+        select * from books where bookName like #{bookName}
+    </select>
 </mapper>

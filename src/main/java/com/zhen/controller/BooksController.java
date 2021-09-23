@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.List;
 
@@ -58,5 +59,16 @@ public class BooksController {
     public String dpupdatebook(Books books){
         bookService.updateBooks(books);
         return "redirect:/book/allbook";
+    }
+
+    @RequestMapping("/queryBooksEvery")
+    public String queryBooksEvery(String bookName , Model model){
+        List<Books> books = bookService.queryBooksEvery("%"+bookName+"%");
+        if(books!=null){
+            model.addAttribute("books",books);
+        }else {
+            model.addAttribute("error","未找到书籍");
+        }
+        return "allbook";
     }
 }

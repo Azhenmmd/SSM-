@@ -22,4 +22,7 @@ public interface BookService {
     //插入一本书
     int insertBooks(Books books);
 
+    //模糊查询书籍
+    List<Books> queryBooksEvery(String bookID);
+
 }

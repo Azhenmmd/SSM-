@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: gzz
-  Date: 2021/9/22
-  Time: 19:04
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,6 +18,15 @@
         <div class="row">
             <div class="col-md-4 column">
                 <a href="${pageContext.request.contextPath}/book/goaddbook" class="btn btn-primary btn-lg">新增书籍</a>
+            </div>
+            <div class="col-md-4 column"></div>
+            <div class="col-md-4 column">
+                <div class="form-inline">
+                <form action="${pageContext.request.contextPath}/book/queryBooksEvery" method="post" style="float:right">
+                    <input type="text" name="bookName" class="form-control" placeholder="请输入查询的内容...">
+                    <input type="submit" value="查询" class="btn btn-primary btn-sm">
+                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -60,5 +62,6 @@
         </div>
     </div>
 </div>
+<span style="color: brown;font-size: 100px">${error}</span>
 </body>
 </html>

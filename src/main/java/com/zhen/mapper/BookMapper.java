@@ -22,4 +22,6 @@ public interface BookMapper {
     //插入一本书
     int insertBooks(Books books);
 
+    List<Books> queryBooksEvery(String bookID);
+
 }

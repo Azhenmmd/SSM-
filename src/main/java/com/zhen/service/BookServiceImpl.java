@@ -40,4 +40,9 @@ public class BookServiceImpl implements BookService{
     public int insertBooks(Books books) {
         return bookMapper.insertBooks(books);
     }
+
+    @Override
+    public List<Books> queryBooksEvery(String bookID) {
+        return bookMapper.queryBooksEvery(bookID);
+    }
 }
