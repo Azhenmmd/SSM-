@@ -12,9 +12,6 @@ public class Mytest {
     public void Test1(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         BookMapper bean = applicationContext.getBean(BookMapper.class);
-        List<Books> books = bean.queryBooks();
-        for (Books book : books) {
-            System.out.println(book);
-        }
+        int i = bean.deleteBooks(6);
     }
 }

@@ -33,11 +33,11 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public int deleteBooks(int id) {
-        return 0;
+        return bookMapper.deleteBooks(id);
     }
 
     @Override
     public int insertBooks(Books books) {
-        return 0;
+        return bookMapper.insertBooks(books);
     }
 }

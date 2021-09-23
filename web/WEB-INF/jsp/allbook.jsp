@@ -22,8 +22,12 @@
                 </h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4 column">
+                <a href="${pageContext.request.contextPath}/book/goaddbook" class="btn btn-primary btn-lg">新增书籍</a>
+            </div>
+        </div>
     </div>
-
     <div class="container">
         <div class="row clearfix">
             <table class="table table-hover table-striped">
@@ -33,6 +37,7 @@
                     <th>书籍名字</th>
                     <th>书籍数量</th>
                     <th>书籍内容</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
 
@@ -43,6 +48,11 @@
                         <td>${book.bookName}</td>
                         <td>${book.bookCounts}</td>
                         <td>${book.detail}</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/book/updatebook?bookID=${book.bookID}" class="btn btn-warning">修改书籍</a>
+                            &nbsp; | &nbsp;
+                            <a href="${pageContext.request.contextPath}/book/deletebook?bookID=${book.bookID}" class="btn btn-danger">删除书籍</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -50,7 +60,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

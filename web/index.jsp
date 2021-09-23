@@ -9,8 +9,9 @@
 <html>
   <head>
     <title>$Title$</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-  <a href="${pageContext.request.contextPath}/book/allbook">查询所有书籍</a>
+  <a href="${pageContext.request.contextPath}/book/allbook" class="btn btn-primary btn-lg">查询所有书籍</a>
   </body>
 </html>

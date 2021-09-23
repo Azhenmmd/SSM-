@@ -29,4 +29,28 @@ public class BooksController {
         return "allbook";
     }
 
+
+    @RequestMapping("/goaddbook")
+    public String goaddBooks(){
+        return "addbooks";
+    }
+
+    @RequestMapping("/addbook")
+    public String addBooks(Books books){
+        bookService.insertBooks(books);
+        return "redirect:/book/allbook";
+    }
+
+    @RequestMapping("/deletebook")
+    public String deleteBook(int bookID){
+        System.out.println(bookID);
+        bookService.deleteBooks(bookID);
+        return "redirect:/book/allbook";
+    }
+
+    @RequestMapping("/updatebook")
+    public String updatebook(int bookID){
+        Books books = bookService.queryBooksById(bookID);
+        return null;
+    }
 }
