@@ -23,12 +23,12 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Books queryBooksById(int id) {
-        return null;
+        return bookMapper.queryBooksById(id);
     }
 
     @Override
     public int updateBooks(Books books) {
-        return 0;
+        return bookMapper.updateBooks(books);
     }
 
     @Override

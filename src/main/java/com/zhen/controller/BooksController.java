@@ -43,14 +43,20 @@ public class BooksController {
 
     @RequestMapping("/deletebook")
     public String deleteBook(int bookID){
-        System.out.println(bookID);
         bookService.deleteBooks(bookID);
         return "redirect:/book/allbook";
     }
 
     @RequestMapping("/updatebook")
-    public String updatebook(int bookID){
+    public String updatebook(int bookID , Model model){
         Books books = bookService.queryBooksById(bookID);
-        return null;
+        model.addAttribute("book",books);
+        return "updatebook";
+    }
+
+    @RequestMapping("/doUpdatebook")
+    public String dpupdatebook(Books books){
+        bookService.updateBooks(books);
+        return "redirect:/book/allbook";
     }
 }

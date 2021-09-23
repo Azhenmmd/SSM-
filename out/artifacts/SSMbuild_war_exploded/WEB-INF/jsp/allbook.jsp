@@ -49,7 +49,7 @@
                         <td>${book.bookCounts}</td>
                         <td>${book.detail}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/book/updatebook" class="btn btn-warning">修改书籍</a>
+                            <a href="${pageContext.request.contextPath}/book/updatebook?bookID=${book.bookID}" class="btn btn-warning">修改书籍</a>
                             &nbsp; | &nbsp;
                             <a href="${pageContext.request.contextPath}/book/deletebook?bookID=${book.bookID}" class="btn btn-danger">删除书籍</a>
                         </td>
