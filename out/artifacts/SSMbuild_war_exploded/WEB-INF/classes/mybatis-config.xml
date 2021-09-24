@@ -15,6 +15,7 @@
 
     <mappers>
         <mapper class="com.zhen.mapper.BookMapper"/>
+        <mapper class="com.zhen.mapper.UserMapper"/>
     </mappers>
 
 
