@@ -9,4 +9,6 @@ public interface UserMapper {
     User loginUser(User user);
 
     int registerUser(User user);
+
+    int queryUserByName(User user);
 }

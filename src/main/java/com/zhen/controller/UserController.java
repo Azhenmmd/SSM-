@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -19,8 +21,18 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/login")
-    public String loginUser(User user){
-        return userService.loginUser(user);
+    public String loginUser(HttpSession session,User user){
+        String msg = "";
+        String s = userService.loginUser(user);
+        String username = user.getUsername();
+        if(s.equals("loginErr")){
+            msg = s;
+        }else {
+            session.setAttribute("username",username);
+            session.setAttribute("user",user);
+            msg = s;
+        }
+        return msg;
     }
 
     @RequestMapping("/usernameBoolean")
@@ -30,8 +42,17 @@ public class UserController {
     }
 
     @RequestMapping("/userRegister")
-    public String userRegister(User user){
+    public String userRegister(User user ,Model model){
         userService.registerUser(user);
-        return "allbook";
+        model.addAttribute("msg","注册成功");
+        return "redirect:/register.jsp";
     }
+
+    @RequestMapping("/goOut")
+    public String goOut(HttpSession session){
+        session.removeAttribute("username");
+        session.removeAttribute("user");
+        return "redirect:/login.jsp";
+    }
+
 }

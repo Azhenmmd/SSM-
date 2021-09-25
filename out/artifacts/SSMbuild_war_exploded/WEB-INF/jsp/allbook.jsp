@@ -13,6 +13,10 @@
                 <h1>
                     <small>书籍列表---查询所有</small>
                 </h1>
+                <h2>
+                    <small>你好:"<%=request.getSession().getAttribute("username")%>"</small>
+                    <a href="${pageContext.request.contextPath}/user/goOut" class="btn btn-success">注销</a>
+                </h2>
             </div>
         </div>
         <div class="row">

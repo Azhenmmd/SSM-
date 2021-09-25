@@ -14,6 +14,12 @@
     <!--静态资源过滤-->
     <mvc:default-servlet-handler/>
     <context:component-scan base-package="com.zhen.controller"/>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/book/**"/>
+            <bean class="com.zhen.interceptor.BookInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>

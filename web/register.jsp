@@ -11,6 +11,7 @@
             if(username==""||username==null){
                 $("#usernameboolean").text("用户名不能为空")
                 $("#usernameboolean").css("color","blue")
+                $("#Rsubmit").attr("disabled",true)
                 return
             }
             $.ajax({
@@ -22,9 +23,11 @@
                     if(result=='ok'){
                         $("#usernameboolean").css("color","green")
                         $("#usernameboolean").text("ok")
+                        $("#Rsubmit").removeAttr("disabled")
                     }else {
                         $("#usernameboolean").css("color","red")
                         $("#usernameboolean").text("用户名重复，请重新输入")
+                        $("#Rsubmit").attr("disabled",true)
                     }
                 }
             })
@@ -54,8 +57,10 @@
         <label>密码</label>
         <input type="password" class="form-control" name="password" required>
     </div>
-    <input type="submit" class="btn btn-default" value="注册">
+    <input type="submit" class="btn btn-lg btn-primary" value="注册" disabled="disabled" id="Rsubmit" onclick="a2()">
+    <label><span>${msg}</span></label>
 </form>
+    <a href="/login.jsp" class="btn btn-default">返回登录界面</a>
 </div>
 </body>
 
