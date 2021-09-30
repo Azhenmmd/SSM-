@@ -44,7 +44,6 @@ public class UserController {
     @RequestMapping("/userRegister")
     public String userRegister(User user ,Model model){
         userService.registerUser(user);
-        model.addAttribute("msg","注册成功");
         return "redirect:/register.jsp";
     }
 

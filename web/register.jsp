@@ -33,6 +33,11 @@
             })
         }
     </script>
+    <script>
+        function a2() {
+            alert("注册成功")
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -58,7 +63,6 @@
         <input type="password" class="form-control" name="password" required>
     </div>
     <input type="submit" class="btn btn-lg btn-primary" value="注册" disabled="disabled" id="Rsubmit" onclick="a2()">
-    <label><span>${msg}</span></label>
 </form>
     <a href="/login.jsp" class="btn btn-default">返回登录界面</a>
 </div>
